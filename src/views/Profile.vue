@@ -71,32 +71,52 @@
                 </card>
             </div>
         </section>
-        <hr id="experience" />
-        <section class="section section-skew">
+        <section class="section-profile-cover section-shaped my-0">
+            <div class="shape shape-style-1 shape-default shape-skew alpha-4">
+                <span id="experience"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+        <section class="section section-skew mt--200">
             <div class="container">
-                <h1 class="display-1 text-center">Work Experience</h1>
+                <card shadow class="card-profile mt--200" no-body>
+                    <h1 class="display-1 text-center">Work Experience</h1>
+                </card> 
                 <div class="row row-grid mt-5 pt-2">
                     <div class="col-lg-4 col-sm-12 mb-2" v-for="(work, index) in experience" :key="index">
                         <WorkCard :company="work.company"
-                                  :title="work.title"
-                                  :languages="work.languages"
-                                  :img="work.img"
-                                  :responsibilities="work.responsibilities" />
+                                :title="work.title"
+                                :languages="work.languages"
+                                :img="work.img"
+                                :responsibilities="work.responsibilities" />
                     </div>
                 </div>
             </div>
         </section>
-        <hr id="projects" />
-        <section class="section section-skew">
+        <section class="section-profile-cover section-shaped my-0">
+            <div class="shape shape-style-1 shape-primary shape-skew alpha-4">
+                <span id="projects"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+        <section class="section section-skew mt--200">
             <div class="container">
-                <h1 class="display-1 text-center">Projects</h1>
+                <card shadow class="card-profile mt--200" no-body>
+                    <h1 class="display-1 text-center">Projects</h1>
+                </card>
                 <div class="row row-grid mt-5 pt-2">
-                    <div class="col-lg-4 col-sm-12 mb-2" v-for="(work, index) in experience" :key="index">
-                        <WorkCard :company="work.company"
-                                  :title="work.title"
-                                  :languages="work.languages"
-                                  :img="work.img"
-                                  :responsibilities="work.responsibilities" />
+                    <div class="col-lg-4 col-sm-12 mb-2" v-for="(proj, index) in projects" :key="index">
+                        <ProjectCard :project="proj" />
                     </div>
                 </div>
             </div>
@@ -106,19 +126,23 @@
 
 <script>
 import WorkCard from './components/WorkCard';
+import ProjectCard from './components/ProjectCard';
 
 import experience from '../data/work.data';
+import projects from '../data/projects.data';
 
 export default {
-  components: { WorkCard },
+  components: { WorkCard, ProjectCard },
   data() {
     return {
       year: new Date().getFullYear(),
-      experience: []
+      experience: [],
+      projects: []
     }
   },
   created() {
     this.experience = experience
+    this.projects = projects
   }
 };
 </script>

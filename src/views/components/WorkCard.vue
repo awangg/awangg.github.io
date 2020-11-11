@@ -1,12 +1,15 @@
 <template>
     <div>
         <card class="work-card border-0" hover shadow body-classes="py-5">
-            <img v-lazy="img"
-                class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                style="width: 200px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <img v-lazy="img"
+                        class="rounded-circle img-center img-fluid shadow shadow-lg--hover">
+                </div>
+            </div>
             <div class="pt-4 text-center">
                 <h5 class="title">
-                    <span class="d-block mb-1">{{ company }}</span>
+                    <span class="d-block mb-1 h6">{{ company }}</span>
                     <small class="h6 text-muted">{{ title }}</small>
                 </h5>
                 <div>
@@ -64,6 +67,6 @@ export default {
 
 <style scoped>
 .work-card {
-  min-height: 31rem;
+    min-height: 23.1rem;
 }
 </style>

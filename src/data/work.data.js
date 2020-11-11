@@ -1,5 +1,14 @@
 module.exports = [
   {
+    "img": "/img/company/paycom.png",
+    "company": "Paycom",
+    "title": "Software Engineer Intern",
+    "languages": ["React", "PHP", "MySQL", "Apache", "Docker", "JS"],
+    "responsibilities": [
+      "Incoming summer 2021 intern"
+    ]
+  },
+  {
     "img": "/img/company/anb.png",
     "company": "ANB Systems",
     "title": "Software Engineer Intern",
