@@ -13,7 +13,7 @@
         <div>
           <a href="https://github.com/awangg"><i class="social fab fa-github" v-b-tooltip.hover.bottom="'Check out my Github!'" variant="primary"></i></a>
           <a href="https://www.linkedin.com/in/andy-wang-219479192/"><i class="social fab fa-linkedin" v-b-tooltip.hover.bottom="'Connect with me on LinkedIn!'" variant="primary"></i></a>
-          <a href="https://drive.google.com/file/d/1U9LJm0gX9d4cYXwC_UAYbD58nCdzn1MB/view?usp=sharing"><i class="social fas fa-file" v-b-tooltip.hover.bottom="'Download my resume!'" variant="primary"></i></a>
+          <a href="https://drive.google.com/file/d/1jklfX7UE_oKZiDD4tGpnJmbyaJi55bvG/view?usp=sharing"><i class="social fas fa-file" v-b-tooltip.hover.bottom="'Download my resume!'" variant="primary"></i></a>
         </div>
       </b-navbar-nav>
     </b-collapse>
