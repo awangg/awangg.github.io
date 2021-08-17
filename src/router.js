@@ -1,15 +1,9 @@
 import VueRouter from 'vue-router'
 
-import Splash from './pages/Splash'
-import About from './pages/About'
-import Experience from './pages/Experience'
-import Projects from './pages/Projects'
+import Landing from './pages/Landing'
 
 const routes = [
-  { path: '/', component: Splash },
-  { path: '/profile', component: About },
-  { path: '/experience', component: Experience },
-  { path: '/projects', component: Projects }
+  { path: '/', component: Landing }
 ]
 
 const router = new VueRouter({

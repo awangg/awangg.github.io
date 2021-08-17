@@ -1,15 +1,14 @@
 <template>
-  <b-navbar toggleable class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
-    <b-navbar-brand href="/"><img src="@/assets/logo.png" class="img-fluid logo" /></b-navbar-brand>
+  <b-navbar toggleable class="navbar navbar-expand-lg fixed-top bg-white">
     <b-navbar-toggle class="navbar-toggler" target="navigation">
     </b-navbar-toggle>
-    <b-collapse class="collapse navbar-collapse justify-content-end bg-white" id="navigation" is-nav>
-      <b-navbar-nav class="nav navbar-nav text-center">
-        <!-- <b-nav-item class="nav-item"><router-link class="nav-link" to="/profile">Profile</router-link></b-nav-item> -->
-        <b-nav-item class="nav-item"><router-link class="nav-link" to="/experience">Experience</router-link></b-nav-item>
-        <b-nav-item class="nav-item"><router-link class="nav-link" to="/projects">Projects</router-link></b-nav-item>
+    <b-collapse class="collapse navbar-collapse justify-content-center bg-white" id="navigation" is-nav>
+      <b-navbar-nav class="nav navbar-nav text-center mr-auto">
+        <b-nav-item class="nav-item"><router-link class="nav-link" to="#projects">PROJECTS</router-link></b-nav-item>
+        <b-nav-item class="nav-item"><router-link class="nav-link" to="#experience">EXPERIENCE</router-link></b-nav-item>
+        <b-nav-item class="nav-item"><router-link class="nav-link" to="#about">ABOUT</router-link></b-nav-item>
       </b-navbar-nav>
-      <b-navbar-nav class="nav navbar-nav text-center">
+      <b-navbar-nav class="nav navbar-nav text-center ml-auto">
         <div>
           <a href="https://github.com/awangg"><i class="social fab fa-github" v-b-tooltip.hover.bottom="'Check out my Github!'" variant="primary"></i></a>
           <a href="https://www.linkedin.com/in/andy-wang-219479192/"><i class="social fab fa-linkedin" v-b-tooltip.hover.bottom="'Connect with me on LinkedIn!'" variant="primary"></i></a>
@@ -22,35 +21,29 @@
 
 <script>
 export default {
+  methods: {
+    scrollMeTo(refName) {
+      var element = this.$refs[refName];
+      var top = element.offsetTop;
+
+      window.scrollTo(0, top);
+    }
+  }
 }
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
-
-a {
-  color: #000;
-}
-
-a:hover {
-  color: #aaa;
-}
-
-#brand {
-  font-family: 'Kanit', sans-serif;
-}
-
-#navigation {
-  background-color: #fff;
-}
-
-.social {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Palanquin:wght@600&display=swap');
 
 .navbar {
+  font-family: 'Palanquin', sans-serif;
+  background-color: transparent;
   padding: .5rem 1rem;
+}
+
+i:hover,
+.nav-item .nav-link a {
+  color: #ba2d2d;
 }
 
 .nav-item {
@@ -64,18 +57,15 @@ a:hover {
 
 .nav-link,
 .nav-link:hover {
-  color: #000;
   margin: 0rem 1rem;
 }
 
-.logo {
-  width: 2rem;
-  height: 2rem;
+i {
+  color: #000;
 }
 
-@media (min-width: 768px) {
-  .navbar-brand {
-    margin-left: 5rem;
-  }
+.social {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 </style>
