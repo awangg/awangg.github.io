@@ -1,15 +1,13 @@
 <template>
-  <div class="card text-white my-4 mx-2">
-    <img :src="require(`@/assets/projects/${img}`)" class="card-img img-fluid" :alt="name" />
-    <div class="img-overlay"></div>
-    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-      <h4 class="card-title text-center">{{ name.toUpperCase() }}</h4>
-      <p class="card-text text-center">{{ description }}</p>
-      <div>
-        <span class="badge badge-info mx-1" v-for="language in languages" :key="language">{{ language }}</span>
+  <div class="card my-4 mx-2" :style="cardStyle" v-on:click="goToRepo(repo)">
+    <img :src="require(`@/assets/projects/${img}`)" class="card-img img-fluid p-5" :alt="name" />
+    <div class="img-overlay d-flex justify-content-center align-items-center">
+      <div class="text-center text-white">
+        <h2 class="card-title">{{name.toUpperCase()}}</h2>
+        <hr class="mt-5" />
+        <p class="px-3">{{description}}</p>
+        <p class="px-3 font-weight-bold">{{prize.split('|')[1]}}</p>
       </div>
-      <a class="btn btn-primary btn-sm mt-3" :href="repo"><i class="fab fa-github"></i></a>
-      <h6 class="card-title text-center mt-3" v-if="prize">{{ prize.split('|')[1] }}</h6>
     </div>
     <div v-if="prize" class="accolade">
       <img :src="require(`@/assets/icons/${prize.split('|')[0]}`)" class="img-fluid" />
@@ -25,44 +23,51 @@ export default {
     description: String,
     prize: String,
     languages: Array,
-    repo: String
+    repo: String,
+    color: String
+  },
+  data() {
+    return {
+      cardStyle: {
+        'background-color': this.color
+      }
+    }
+  },
+  methods: {
+    goToRepo(url) {
+      window.open(url, '_blank').focus();
+    }
   }
 }
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@600&display=swap');
 
 .card {
-  box-shadow: 0px 0px 4px 4px rgb(220,220,220,.9);
+  border-radius: 8px;
+  border: 0px;
 }
 
-.card:hover {
-  box-shadow: 10px 10px 5px grey;
-  transition: .5s;
-}
-
-.card:hover > .img-overlay,
-.card:active > .img-overlay {
-  background-color: #000;
-  opacity: .7;
-  width: 100.3%;
-  height: 100.3%;
+.img-overlay {
   position: absolute;
-  border-radius: 4px;
-}
-
-.card-title {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.card-img-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 8px;
   opacity: 0;
 }
 
-.card-img-overlay:hover,
-.card-img-overlay:active {
-  opacity: 1;
+.card-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: 'Palanquin', sans-serif;
+}
+
+.img-overlay:hover {
+  opacity: .8;
+  transition: .5s;
 }
 
 .accolade {
