@@ -62,7 +62,7 @@ export default {
 
 @media (min-width: 768px) {
   .splash {
-    height: 55vh;
+    height: 60vh;
   }
 }
 
