@@ -4,6 +4,9 @@
       <div class="text-center px-2">
         <h1 class="display-3 title">hello, i'm <span class="accent">andy wang</span></h1>
         <p class="subtitle mt-4">an experienced software developer studying at Rice University interested in large-scale software systems</p>
+        <div class="mt-4">
+          <a href="mailto:andynmnwang@gmail.com"><i class="social fas fa-envelope"></i>&nbsp;<span class="email ml-1">andynmnwang@gmail.com</span></a>
+        </div>
         <DownArrow class="mt-5" />
       </div>
     </div>
@@ -53,13 +56,13 @@ export default {
 
 @media (max-width: 576px) {
   .splash {
-    height: 70vh;
+    height: 80vh;
   }
 }
 
 @media (min-width: 768px) {
   .splash {
-    height: 45vh;
+    height: 60vh;
   }
 }
 
@@ -72,5 +75,20 @@ export default {
   font-style: italic;
   color: #999;
   font-size: 1.3rem;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.social {
+  color: #ba2d2d;
+  font-size: 1.5rem;
+}
+
+.email {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 1.5rem;
+  color: #000;
 }
 </style>
